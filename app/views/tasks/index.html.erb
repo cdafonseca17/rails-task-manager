@@ -1,7 +1,9 @@
-<h1>All tasks: </h1>
+<h1>My tasks </h1>
 <ul>
 <% @tasks.each do |task| %>
-  <li> <%= task.completed ? '[X]' : '[  ]'%> <strong><%= task.title.capitalize %></strong> -
+  <li> <%= task.completed ? '[X]' : '[  ]'%>
+    <%= task.id %>
+    <strong><%= link_to task.title.capitalize, task_path(task) %></strong> -
     <em>Details: <%= task.details.capitalize %></em></li>
 <% end %>
 </ul>
