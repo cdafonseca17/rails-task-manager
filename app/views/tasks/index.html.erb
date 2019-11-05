@@ -3,7 +3,10 @@
 <% @tasks.each do |task| %>
   <li> <%= task.completed ? '[X]' : '[  ]'%>
     <strong><%= link_to task.title, task_path(task) %></strong> -
-    <em>Details: <%= task.details %></em></li>
+    <em>Details: <%= task.details %></em></li> -
+    <%= link_to 'Delete', task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></h2>
 <% end %>
 </ul>
 <h2>What do you want to do?</h2>
