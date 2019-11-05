@@ -12,7 +12,20 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(title: params['task']['title'], details: params['task']['details'])
-    @task.save
+    @task = Task.create(title: params['task']['title'], details: params['task']['details'])
+  end
+
+  def edit
+    @task = Task.find(params['id'].to_i)
+  end
+
+  def update
+    @task = Task.find(params['id'].to_i).update(task_params)
+  end
+
+  private
+
+  def task_params
+    params.require(:task).permit(:title, :details, :completed)
   end
 end

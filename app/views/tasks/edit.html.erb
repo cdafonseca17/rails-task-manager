@@ -1,0 +1,23 @@
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+
+   <%= f.label :completed %>
+  <%= f.text_field :completed %>
+
+  <%= f.submit %>
+<% end %>
+
+
+<!-- <form action="/tasks/1" method="patch">
+  <label for="">Title:</label>
+  <input type="text" placeholder="<%= @task.title %>" name="task[title]">
+  <label for="">Details:</label>
+  <input type="text" placeholder="<%= @task.details %>" name="task[details]">
+  <label for="">Completed status:</label>
+  <input type="text" placeholder="<%= @task.completed %>" name="task[completed]">
+  <input type="submit" value="Update Task">
+</form> -->
